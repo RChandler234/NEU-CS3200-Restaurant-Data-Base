@@ -1,5 +1,5 @@
 # CS3200 Database Design Final Project
-## Resteraunt Database
+## Restaurant Database
 ## Fall 2021 Group 50
 ### Seungbin (Andy) Jin & Jay Patel 
 
@@ -8,11 +8,11 @@ For this project, we created a restaurant database with users (customers), dishe
 
 ### UML Diagram
 Our UML Diagram showing our relational database is located in the same folder as this file:
-[db_design_final_project_UML.pdf](https://github.com/JayPat73/NEU-CS3200-Restaurant-Data-Base/blob/main/CS3200%20Final%20UML%20Diagram.pdf)
+[db_design_final_project_UML.pdf](https://github.com/JayPat73/NEU-CS3200-Restaurant-Data-Base/blob/main/db_design_final_project_UML.pdf)
 
 #### User Model
 The user for our database is a user object representing a customer for the restaurant. A user has a first name, last name, username, password, and email
-all represented as strings. The user also has a date of birth, as well as a created and update field which are stored as dates. 
+all represented as strings. The user also has a date of birth, as well as a created and updated field which are stored as dates. 
 
 The user can be interpreted as someone who is ordering at or from the restaurant be it an online order or as a rewards member who signed up using their 
 personal information.
