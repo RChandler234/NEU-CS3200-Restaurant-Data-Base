@@ -24,7 +24,7 @@ public class User {
     private String email;
     private Date dateOfBirth;
 
-    @OneToMany
+    @OneToMany (mappedBy = "user")
     @JsonIgnore
     private List<Order> orders;
 

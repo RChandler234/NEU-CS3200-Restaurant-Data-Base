@@ -8,7 +8,7 @@ import java.util.List;
 import org.aspectj.weaver.ast.Or;
 
 @Entity
-@Table(name="dish")
+@Table(name="dishes")
 public class Dish {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
