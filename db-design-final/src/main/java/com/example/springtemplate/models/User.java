@@ -1,11 +1,14 @@
 package com.example.springtemplate.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mysql.cj.conf.PropertyDefinitions.DatabaseTerm;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -21,6 +24,10 @@ public class User {
     private String email;
     private Date dateOfBirth;
 
+    @OneToMany
+    @JsonIgnore
+    private List<Order> orders;
+
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
     public String getFirstName() { return firstName; }
@@ -35,14 +42,17 @@ public class User {
     public void setEmail(String email) { this.email = email; }
     public Date getDateOfBirth() { return dateOfBirth; }
     public void setDateOfBirth(Date dateOfBirth) { this.dateOfBirth = dateOfBirth; }
+    public List<Order> getOrders() { return orders; }
+    public void setOrders(List<Order> orders) { this.orders = orders; }
 
-    public User(String username, String password, String first_name, String last_name, String email, Date date_of_birth) {
+    public User(String username, String password, String first_name, String last_name, String email, Date date_of_birth, List<Order> orders) {
         this.username = username;
         this.password = password;
         this.firstName = first_name;
         this.lastName = last_name;
         this.email = email;
         this.dateOfBirth = date_of_birth;
+        this.orders = orders;
     }
 
     public User() {}

@@ -1,6 +1,9 @@
 package com.example.springtemplate.daos;
 
+import com.example.springtemplate.models.IngredientAmount;
+import com.example.springtemplate.models.Order;
 import com.example.springtemplate.models.User;
+import com.example.springtemplate.repositories.OrderRepository;
 import com.example.springtemplate.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -19,6 +22,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserOrmDao {
     @Autowired
     UserRepository userRepository;
+    @Autowired
+    OrderRepository orderRepository;
 
     @PostMapping("/api/users")
     public User createUser(@RequestBody User user) {
@@ -54,6 +59,12 @@ public class UserOrmDao {
         user.setEmail(userUpdates.getEmail());
         user.setDateOfBirth(userUpdates.getDateOfBirth());
         return userRepository.save(user);
+    }
+
+    @GetMapping("/api/users/orders/users/{userId}")
+    public List<Order> findOrdersByUsers(
+        @PathVariable("userID") Integer id){
+        return orderRepository.findOrdersByUser(id);
     }
 
 }

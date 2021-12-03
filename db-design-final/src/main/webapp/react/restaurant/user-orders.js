@@ -12,7 +12,7 @@ const UserOrders = () => {
   }, [])
 
   const findUserOrders = (userId) =>
-      userService.userOrders(userId).then(Orders => setOrders(orders))
+      userService.userOrders(userId).then(orders => setOrders(orders))
   return(
       <div>
         <h2>Order List</h2>
