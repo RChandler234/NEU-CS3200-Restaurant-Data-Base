@@ -48,7 +48,7 @@ public class IngredientOrmDao {
     ingredientRepository.deleteById(id);
   }
 
-  @GetMapping("/api/ingredients/ingredientAmounts/ingredients/{ingredientId}")
+  @GetMapping("/api/ingredients/ingredientAmount/ingredients/{ingredientId}")
   public List<IngredientAmount> findIngredientAmountByIngredients(
       @PathVariable("ingredientId") Integer id){
     return ingredientAmountRepository.findIngredientAmountByIngredient(id);

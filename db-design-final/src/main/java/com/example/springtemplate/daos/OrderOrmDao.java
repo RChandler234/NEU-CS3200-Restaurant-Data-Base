@@ -19,7 +19,7 @@ public class OrderOrmDao {
   UserRepository userRepository;
 
 
-  @PostMapping("/api/order/{userId}/{dishId}")
+  @PostMapping("/api/orders/{userId}/{dishId}")
   public Order createOrder(
       @PathVariable("userId") Integer userId,
       @PathVariable("dishId") Integer dishId,
@@ -30,29 +30,29 @@ public class OrderOrmDao {
     ;return orderItemRepository.save(order);
   }
 
-  @GetMapping("/api/order")
+  @GetMapping("/api/orders")
   public List<Order> findAllOrders() {
     return orderItemRepository.findAllOrders();
   }
 
-  @GetMapping("/api/order/{orderId}")
+  @GetMapping("/api/orders/{orderId}")
   public Order findOrderById(
       @PathVariable("orderId") Integer id) {
     return orderItemRepository.findOrderById(id);
   }
 
-  @PutMapping("/api/order/{orderId}")
+  @PutMapping("/api/orders/{orderId}")
   public Order updateOrder(
       @PathVariable("orderId") Integer id,
       @RequestBody Order orderUpdates) {
     Order order = orderItemRepository.findOrderById(id);
-    order.setUser(order.getUser());
-    order.setDish(order.getDish());
+    order.setUser(orderUpdates.getUser());
+    order.setDish(orderUpdates.getDish());
 
     return orderItemRepository.save(order);
   }
 
-  @DeleteMapping("/api/order/{orderId}")
+  @DeleteMapping("/api/orders/{orderId}")
   public void deleteOrder(
       @PathVariable("orderId") Integer id) {
     orderItemRepository.deleteById(id);

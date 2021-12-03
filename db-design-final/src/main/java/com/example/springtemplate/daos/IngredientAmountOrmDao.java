@@ -23,7 +23,7 @@ public class IngredientAmountOrmDao {
   IngredientRepository ingredientRepository;
 
 
-  @PostMapping("/api/ingredientAmounts/{ingredientId}/{dishId}")
+  @PostMapping("/api/ingredientAmount/{ingredientId}/{dishId}")
   public IngredientAmount createRecipe(@PathVariable("ingredientId") Integer ingredientId,
       @PathVariable("dishId") Integer dishId,
       @RequestBody IngredientAmount ingredientAmount) {
@@ -32,12 +32,12 @@ public class IngredientAmountOrmDao {
     return ingredientAmountRepository.save(ingredientAmount);
   }
 
-  @GetMapping("/api/ingredientAmounts")
+  @GetMapping("/api/ingredientAmount")
   public List<IngredientAmount> findAllIngredientAmounts() {
     return ingredientAmountRepository.findAllIngredientAmounts();
   }
 
-  @GetMapping("/api/ingredientAmounts/{ingredientAmountId}")
+  @GetMapping("/api/ingredientAmount/{ingredientAmountId}")
   public IngredientAmount findIngredientAmountById(
       @PathVariable("ingredientAmountId") Integer id) {
     return ingredientAmountRepository.findIngredientAmountById(id);
@@ -48,8 +48,8 @@ public class IngredientAmountOrmDao {
       @PathVariable("ingredientAmountId") Integer id,
       @RequestBody IngredientAmount ingredientAmountUpdates) {
     IngredientAmount ingredientAmount = ingredientAmountRepository.findIngredientAmountById(id);
-    ingredientAmount.setIngredient(ingredientAmount.getIngredient());
-    ingredientAmount.setDish(ingredientAmount.getDish());
+    ingredientAmount.setIngredient(ingredientAmountUpdates.getIngredient());
+    ingredientAmount.setDish(ingredientAmountUpdates.getDish());
 
     return ingredientAmountRepository.save(ingredientAmount);
   }

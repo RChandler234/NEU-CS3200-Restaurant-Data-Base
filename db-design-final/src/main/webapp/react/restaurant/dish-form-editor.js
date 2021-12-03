@@ -74,4 +74,4 @@ const DishFormEditor = () => {
   )
 }
 
-export default BakedGoodFormEditor
+export default DishFormEditor

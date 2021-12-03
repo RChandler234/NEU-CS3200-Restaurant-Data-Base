@@ -1,7 +1,7 @@
 import userService from "./user-service"
 const {useState, useEffect} = React;
 const {Link, useParams, useHistory} = window.ReactRouterDOM;
-const CustomerFormEditor = () => {
+const UserFormEditor = () => {
   const {id} = useParams()
   const [user, setUser] = useState({})
   useEffect(() => {

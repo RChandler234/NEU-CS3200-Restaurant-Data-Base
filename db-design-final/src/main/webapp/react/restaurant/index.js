@@ -26,10 +26,10 @@ const App = () => {
           <Route path="/users/:id" exact={true}>
             <UserFormEditor/>
           </Route>
-          <Route path={["/dish","/"]} exact={true}>
+          <Route path={["/dishes","/"]} exact={true}>
             <DishList/>
           </Route>
-          <Route path="/dish/:id" exact={true}>
+          <Route path="/dishes/:id" exact={true}>
             <DishFormEditor/>
           </Route>
           <Route path={["/ingredients","/"]} exact={true}>
@@ -44,19 +44,19 @@ const App = () => {
           <Route path="/ingredientAmount/:id" exact={true}>
             <IngredientAmountFormEditor/>
           </Route>
-          <Route path={["/order", "/"]} exact={true}>
+          <Route path={["/orders", "/"]} exact={true}>
             <OrderList/>
           </Route>
-          <Route path="/order/:id" exact={true}>
+          <Route path="/orders/:id" exact={true}>
             <OrderFormEditor/>
           </Route>
-          <Route path="/user/order/users/:userId" exact={true}>
+          <Route path="/users/orders/users/:userId" exact={true}>
             <UserOrder/>
           </Route>
-          <Route path="/dish/order/dish/:dishId" exact={true}>
+          <Route path="/dishes/orders/dishes/:dishId" exact={true}>
             <DishOrder/>
           </Route>
-          <Route path="/dish/ingredientAmount/dish/:dishId" exact={true}>
+          <Route path="/dishes/ingredientAmount/dishes/:dishId" exact={true}>
             <DishIngredientAmounts/>
           </Route>
           <Route path="/ingredients/ingredientAmount/ingredients/:ingredientId" exact={true}>
