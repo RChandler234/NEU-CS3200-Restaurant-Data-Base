@@ -19,17 +19,15 @@ export const deleteUser = (id) =>
 export const createUser = (user) =>
     fetch(`${USERS_URL}`, {
       method: 'POST',
-      body: JSON.stringify(customer),
-      headers: {'content-type': 'application/json'}
-    }).then(response => response.json())
+      body: JSON.stringify(user),
+      headers: {'content-type': 'application/json'}}).then(response => response.json())
 
 // TODO: update a user by their ID
 export const updateUser = (id, user) =>
     fetch(`${USERS_URL}/${id}`, {
       method: 'PUT',
       body: JSON.stringify(user),
-      headers: {'content-type': 'application/json'}
-    }).then(response => response.json())
+      headers: {'content-type': 'application/json'}}).then(response => response.json())
 
 // TODO: find all orders for a user
 export const userOrders = (id) =>

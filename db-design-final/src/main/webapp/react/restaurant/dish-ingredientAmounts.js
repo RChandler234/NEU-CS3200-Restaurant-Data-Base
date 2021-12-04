@@ -10,7 +10,8 @@ const DishIngredientAmounts = () => {
   }, [])
 
   const  findDishIngredientAmounts = (dishId) =>
-      dishService.dishIngredientAmounts(dishId).then(ingredientAmounts => setIngredientAmounts(ingredientAmounts))
+      dishService.dishIngredientAmounts(dishId)
+      .then(ingredientAmounts => setIngredientAmounts(ingredientAmounts))
   return(
       <div>
         <h2>Ingredient Amount List</h2>
@@ -18,10 +19,10 @@ const DishIngredientAmounts = () => {
           {
             ingredientAmounts.map(ingredientAmount =>
                 <li key={ingredientAmount.id}>
-                  <Link to={`/ingredientAmounts/${ingredientAmount.id}`}>
+                  <Link to={`/ingredientAmount/${ingredientAmount.id}`}>
                     Ingredient Amount ID: {ingredientAmount.id},
                     Ingredient Amount Ingredient ID: {ingredientAmount.ingredient.id},
-                    Ingredient Amount Dish ID: {ingredientAmount.bakedGood.id}
+                    Ingredient Amount Dish ID: {ingredientAmount.dish.id}
                   </Link>
                 </li>)
           }

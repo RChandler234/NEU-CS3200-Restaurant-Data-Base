@@ -9,7 +9,8 @@ const DishList = () => {
     findAllDishes()
   }, [])
   const findAllDishes = () =>
-      dishService.findAllDishes().then(dishes => setDishes(dishes))
+      dishService.findAllDishes()
+      .then(dishes => setDishes(dishes))
   return(
       <div>
         <h2>Dish List</h2>

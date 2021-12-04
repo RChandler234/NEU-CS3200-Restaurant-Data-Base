@@ -42,7 +42,7 @@ const IngredientAmountFormEditor = () => {
       ingredientAmountService.createIngredientAmount(dishId, ingredientId, ingredientAmount)
       .then(() => history.back())
 
-  const updateRecipe = (id, newIngredientAmount) =>
+  const updateIngredientAmount = (id, newIngredientAmount) =>
       ingredientAmountService.updateIngredientAmount(id, newIngredientAmount)
       .then(() => history.back())
 
@@ -61,11 +61,9 @@ const IngredientAmountFormEditor = () => {
 
         <br/>
 
-        <button onClick={() => {history.back()}}
-                className="btn btn-warning">Cancel</button>
+        <button onClick={() => {history.back()}} className="btn btn-warning">Cancel</button>
         <button onClick={() => deleteIngredientAmount(ingredientAmount.id)} className="btn btn-danger">Delete</button>
-        <button onClick={() => updateRecipe(ingredientAmount.id, ingredientAmount)}
-                className="btn btn-primary">Save</button>
+        <button onClick={() => updateIngredientAmount(ingredientAmount.id, ingredientAmount)} className="btn btn-primary">Save</button>
         <button onClick={() => createIngredientAmount(dishId, ingredientId, ingredientAmount)} className="btn btn-success">Create</button>
         <br/>
         <Link to={checkIngredLink()}>

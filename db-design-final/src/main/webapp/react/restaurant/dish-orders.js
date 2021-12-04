@@ -20,7 +20,7 @@ const DishOrders = () => {
                 <li key={order.id}>
                   <Link to={`/orders/${order.id}`}>
                     Order ID: {order.id},
-                    Order Date: {order.order.date},
+                    Order Date: {order.orderDate},
                     Order User ID: {order.user.id},
                     Order Dish ID: {order.dish.id}
                   </Link>

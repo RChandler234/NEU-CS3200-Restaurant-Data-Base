@@ -37,7 +37,7 @@ const OrderFormEditor = () => {
   const createOrder = (userId, dishId, order) =>
       orderService.createOrder(userId, dishId, order).then(() => history.back())
 
-  const updateCartItem = (id, newCartItem) =>
+  const updateOrder = (id, newOrder) =>
       orderService.updateOrder(id, newOrder).then(() => history.back())
 
   return (
@@ -53,16 +53,17 @@ const OrderFormEditor = () => {
         <label>User ID</label>
         <input onChange={(e) => userId = (e.target.value)}
                value={order.user.id} className="form-control"  placeholder={"Number ex: 1"}/>
+
+        <label>Date</label>
+        <input onChange={(e) =>
+            (order => ({...order, orderDate: e.target.value}))}
+               value={order.orderDate} className="form-control" placeholder={"Date ex: YYYY-MM-DD"}/>
         <br/>
 
-        <button onClick={() => {history.back()}}
-                className="btn btn-warning">Cancel</button>
-
+        <button onClick={() => {history.back()}} className="btn btn-warning">Cancel</button>
         <button onClick={() => deleteOrder(order.id)} className="btn btn-danger">Delete</button>
-        <button onClick={() => updateOrder(order.id, order)}
-                className="btn btn-primary">Save</button>
-        <button onClick={() => createOrder(userId, dishId, order)}
-                className="btn btn-primary">Create</button>
+        <button onClick={() => updateOrder(order.id, order)} className="btn btn-primary">Save</button>
+        <button onClick={() => createOrder(userId, dishId, order)} className="btn btn-success">Create</button>
 
 
         <br/>

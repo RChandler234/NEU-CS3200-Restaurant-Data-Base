@@ -24,7 +24,7 @@ public class IngredientAmountOrmDao {
 
 
   @PostMapping("/api/ingredientAmount/{ingredientId}/{dishId}")
-  public IngredientAmount createRecipe(@PathVariable("ingredientId") Integer ingredientId,
+  public IngredientAmount createIngredientAmount(@PathVariable("ingredientId") Integer ingredientId,
       @PathVariable("dishId") Integer dishId,
       @RequestBody IngredientAmount ingredientAmount) {
     ingredientAmount.setIngredient(ingredientRepository.findIngredientById(ingredientId));

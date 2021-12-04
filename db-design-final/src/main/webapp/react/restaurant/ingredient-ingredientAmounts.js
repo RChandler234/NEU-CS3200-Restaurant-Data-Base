@@ -2,14 +2,12 @@ const {Link, useParams} = window.ReactRouterDOM;
 import ingredientService from "./ingredient-service"
 const { useState, useEffect } = React;
 
-
 const IngredientIngredientAmounts = () => {
   const {ingredientId} = useParams()
   const [ingredientAmounts, setIngredientAmounts] = useState([])
   useEffect(() => {
     findIngredientIngredientAmounts(ingredientId)
   }, [])
-
 
 
   const findIngredientIngredientAmounts = (ingredientId) =>

@@ -27,6 +27,7 @@ const OrderList = () => {
                     Order ID: {order.id},
                     User ID: {order.user.id},
                     Dish ID: {order.dish.id}
+                    Order Date: {order.orderDate}
                   </Link>
                 </li>)
           }

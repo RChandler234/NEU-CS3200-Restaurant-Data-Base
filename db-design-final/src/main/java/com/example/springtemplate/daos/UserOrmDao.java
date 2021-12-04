@@ -63,7 +63,7 @@ public class UserOrmDao {
 
     @GetMapping("/api/users/orders/users/{userId}")
     public List<Order> findOrdersByUsers(
-        @PathVariable("userID") Integer id){
+        @PathVariable("userId") Integer id){
         return orderRepository.findOrdersByUser(id);
     }
 

@@ -36,7 +36,6 @@ public class DishOrmDao {
         return dishRepository.findDishById(id);
     }
 
-
     @PutMapping("/api/dishes/{dishId}")
     public Dish updateDish(
         @PathVariable("dishId") Integer id,
@@ -62,7 +61,7 @@ public class DishOrmDao {
         return orderRepository.findOrdersByDish(id);
     }
 
-    @GetMapping("/api/dishes/recipes/dishes/{dishId}")
+    @GetMapping("/api/dishes/ingredientAmount/dishes/{dishId}")
     public List<IngredientAmount> findIngredientAmountByDishes(
         @PathVariable("dishId") Integer id){
         return ingredientAmountRepository.findIngredientAmountByDish(id);

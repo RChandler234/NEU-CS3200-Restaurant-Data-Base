@@ -20,8 +20,8 @@ const DishFormEditor = () => {
       dishService.createDish(dish).then(() => history.back())
 
   const updateDish = (id, newDish) =>
-      dishService.updateDish(id, newDish.then(() => history.back())
-      )
+      dishService.updateDish(id, newDish).then(() => history.back())
+
 
   return (
       <div>
@@ -48,7 +48,7 @@ const DishFormEditor = () => {
 
         <label>Calories</label>
         <input onChange={(e) =>
-            setDish(bakedGood => ({...dish, calories: e.target.value}))}
+            setDish(dish => ({...dish, calories: e.target.value}))}
                value={dish.calories} className="form-control"/>
 
         <label>Price</label>
@@ -66,7 +66,7 @@ const DishFormEditor = () => {
           Order Info
         </Link>
         <br/>
-        <Link to={`ingredientAmounts/dishes/${dish.id}`}>
+        <Link to={`ingredientAmount/dishes/${dish.id}`}>
           Ingredient Amount Info
         </Link>
 

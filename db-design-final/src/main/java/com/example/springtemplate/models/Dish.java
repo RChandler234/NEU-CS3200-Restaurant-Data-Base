@@ -89,7 +89,7 @@ public class Dish {
     return orders;
   }
 
-  public void setCartItems(List<Order> orders) {
+  public void setOrders(List<Order> orders) {
     this.orders = orders;
   }
 
