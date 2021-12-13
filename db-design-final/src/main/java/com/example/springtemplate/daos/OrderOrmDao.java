@@ -27,7 +27,7 @@ public class OrderOrmDao {
 
     order.setUser(userRepository.findUserById(userId));
     order.setDish(dishRepository.findDishById(dishId));
-    ;return orderItemRepository.save(order);
+    return orderItemRepository.save(order);
   }
 
   @GetMapping("/api/orders")
@@ -48,7 +48,7 @@ public class OrderOrmDao {
     Order order = orderItemRepository.findOrderById(id);
     order.setUser(orderUpdates.getUser());
     order.setDish(orderUpdates.getDish());
-
+    order.setOrderDate(orderUpdates.getOrderDate());
     return orderItemRepository.save(order);
   }
 

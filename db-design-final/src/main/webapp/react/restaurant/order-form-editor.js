@@ -56,7 +56,7 @@ const OrderFormEditor = () => {
 
         <label>Date</label>
         <input onChange={(e) =>
-            (order => ({...order, orderDate: e.target.value}))}
+            setOrder(order => ({...order, orderDate: e.target.value}))}
                value={order.orderDate} className="form-control" placeholder={"Date ex: YYYY-MM-DD"}/>
         <br/>
 
