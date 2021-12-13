@@ -38,8 +38,14 @@ ingredientAmount, a dishID which is an int refering to the id of the dish the in
 ingredient that is a part of the dish.
 
 #### Enumeration
-Our enumeration is the enum/table DishType, which contains four possible values: APPETIZER, ENTREE, DESSERT, and DRINK . The field that is constrained to this 
+Our enumeration is the enum/table DishType, which contains four possible values: APPETIZER, ENTREE, DESSERT, and DRINK. The field that is constrained to this 
 enumeration is the type variable in the class Dish.
 
 #### Interface Requirements
-//TODO
+For the User, Order, Dish, Ingredient Amount, and Ingredient, the interface allows the user to do the CRUD operations, i.e.: create, read, update, and delete 
+records. If the user attempts to update the id of any item, or the foreign key (such as the ingredient or dish value in ingredient amount or the user or dish 
+values in order), it will not update. Create allows the creation of a new item, which will be saved upon pressing the save button. The user will be sent back to 
+their previous page if they select the cancel button. For orders and ingredient amounts, the user must use preexisting ids for the required field, i.e. a valid 
+user id when creatign an order or else the user interface will crash attempting to retreive an item that does not exist. For a dish, the drop down menu can be 
+used to specify the enum value for the dish type. If the user attempts to create or upadate a user without inputting a username and password, the user will not 
+be created or updated as it is a required field.
