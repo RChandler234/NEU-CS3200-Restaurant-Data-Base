@@ -47,4 +47,5 @@ records. If the user attempts to update the id of any item, or the foreign key (
 values in order), it will not update. Create allows the creation of a new item, which will be saved upon pressing the save button. The user will be sent back to 
 their previous page if they select the cancel button. For orders and ingredient amounts, the user must use preexisting ids for the required field, i.e. a valid 
 user id when creatign an order or else the user interface will crash attempting to retreive an item that does not exist. For a dish, the drop down menu can be 
-used to specify the enum value for the dish type.
+used to specify the enum value for the dish type. If the user attempts to create or upadate a user without inputting a username and password, the user will not 
+be created or updated as it is a required field.
